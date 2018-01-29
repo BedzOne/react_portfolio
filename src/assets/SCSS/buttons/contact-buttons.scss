@@ -1,23 +1,11 @@
-.container {
-
-    .link1,.link2 {
-        position: absolute;
-        top: 0;
-        border: 0.1em solid black;
-        width: 10em;
-        height: 7em;
-        color: #575555;
-    }
-
-    .link1 {
-        left: 0;
-        transform: rotate(-45deg) translateY(-72px) translateX(-17px);
-    }
-
-    .link2 {
-        right: 0;
-        transform: rotate(45deg) translateY(-72px) translateX(17px);
-    }
+.link1,.link2 {
+    position: absolute;
+    top: 0;
+    border: 0.09em solid $mainGrey;
+    width: 10em;
+    height: 7em;
+    color: #575555;
+    margin-left: 0;
 
     i {
         position: absolute;
@@ -25,15 +13,25 @@
 
 
         &::before{
-            font-size: 3em;
+            font-size: 2em;
         }
     }
+}
 
-    .icon1 {
-        left: 35%;
-    }
+.link1 {
+    left: 0;
+    transform: rotate(-45deg) translateY(-90px) translateX(-17px);
+}
 
-    .icon2 {
-        left: 35%;
-    }
+.link2 {
+    right: 0;
+    transform: rotate(45deg) translateY(-90px) translateX(17px);
+}
+
+.icon1 {
+    left: 40%;
+}
+
+.icon2 {
+    left: 40%;
 }

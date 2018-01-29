@@ -4,6 +4,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+// const extractSass = new ExtractTextPlugin({
+//   filename: "./assets/styles.css",
+//   allChunks: true,
+//   // disable: process.env.NODE_ENV !== 'production'
+// });
+
 module.exports = {
   entry: ['./src/js/index.js', './src/assets/SCSS/App.scss'],
   output: {
@@ -13,7 +19,7 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
-    port: 3000,
+    port: 3001,
     hot: true,
     historyApiFallback: true,
   },
@@ -36,13 +42,14 @@ module.exports = {
       },
       {
         test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
           use: [{
-              loader: "style-loader"
-          }, {
               loader: "css-loader"
           }, {
               loader: "sass-loader"
           }]
+        })
       },
       {
         test: /\.css$/,
@@ -75,12 +82,7 @@ module.exports = {
     new CopyWebpackPlugin([
       {from:'src/assets/images',to:'./assets/images'} 
   ]), 
+  new ExtractTextPlugin({filename: 'style.css'})
   ],
-  // target: "node"
-}
+};
 
-// const extractSass = new ExtractTextPlugin({
-//   filename: "./assets/styles.css",
-//   allChunks: true,
-//   // disable: process.env.NODE_ENV !== 'production'
-// });

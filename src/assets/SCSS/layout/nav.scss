@@ -1,0 +1,53 @@
+.container {
+    nav {
+        width: 80vw;
+        @include flexbox();
+        @include justify-content(space-between);
+        margin-top: 2.5em;
+
+        @media #{$desktop} {
+            width: 40vw;
+            margin-top: 1em;
+        }
+
+        a {
+            @include flexbox();
+            @include align-items(center);
+            @include justify-content(center);
+            width: calc((100% / 3) - 0.5em);
+            border: 0.15em solid $purple;
+            text-align: center;
+            height: 3em;
+
+            @media #{$desktop} {
+                width: calc((100% / 3) - 2em);
+            }
+        }
+    }
+}
+
+.about, 
+.work,
+.contact {
+    nav {
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(center);
+        margin-bottom: 0.5em;
+
+        @media #{$desktop} {
+            position: absolute;
+            bottom: 0.3em;
+            right: 3em;
+            bottom: 0.3em;
+        }
+
+        a {
+            margin-left: 1em;
+
+            &:nth-of-type(1) {
+                margin-left: 0;
+            }
+        }
+    }
+}

@@ -9,12 +9,5 @@
         }
     },
     "env":{ "es6": true }
-    // "plugins": [
-    //     "react"
-    //   ],
-    // "extends": ["eslint:all", "plugin:react/all"],
-    // "rules": {
-    //     "no-console": 0
-    // }
 }
     

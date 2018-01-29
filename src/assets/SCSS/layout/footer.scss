@@ -1,0 +1,10 @@
+footer {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 0.3em;
+    font-size: 0.7em;
+
+    @media #{$desktop} {
+        left: 0;
+    }
+}

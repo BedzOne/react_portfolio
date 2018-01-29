@@ -1,0 +1,52 @@
+.contact, .contact__container {
+
+    @media #{$desktop} {
+        height: 100vh;
+    }
+}
+
+.contact {
+    position: relative;
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+    @include flex-direction(column);
+}
+
+.contact__container {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 4em;
+
+    @media #{$tablet} {
+        width: 70%;
+    }
+
+    @media #{$desktop} {
+        width: 40%;
+    }
+}
+
+form {
+    @include flexbox();
+    @include flex-direction(column);
+
+    label, input, textarea{
+        margin-top: 1em;
+    }
+
+    label {
+        text-align: center;
+    }
+
+    input, button {
+        height: 2em;
+    }
+
+    input, textarea {
+        background: $lightGrey;
+        border: none;
+        border-radius: 2px;
+        padding: 0.2em;
+    }
+}

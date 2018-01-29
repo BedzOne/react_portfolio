@@ -1,0 +1,39 @@
+.work__project-desc-links, .about__item-list {
+    a {
+        background: white;
+        padding: 0.5em 1em;
+        border-radius: 2px;
+        border: 0.1em solid transparent;
+        transition: all 0.5s ease-in-out;
+
+        @media #{$desktop} {
+            margin-left: 2em;
+        }
+
+        &:hover {
+            border: 0.1em solid $purple;
+            background: $lightBlack;
+        }
+    }
+}
+
+.contact {
+    button {
+        width: 5em;
+        height: 2.5em;
+        margin: 0 auto;
+        margin-top: 2em;
+        padding: 0.5em 1em;
+        border-radius: 2px;
+        border: 0.1em solid transparent;
+        background: white;
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            border: 0.1em solid $purple;
+            background: $lightBlack;
+            color: white;
+        }    
+    }
+}
