@@ -3,12 +3,10 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CompressionPlugin = require("compression-webpack-plugin");
 
-// const extractSass = new ExtractTextPlugin({
-//   filename: "./assets/styles.css",
-//   allChunks: true,
-//   // disable: process.env.NODE_ENV !== 'production'
-// });
+const prod_ENV = {'process.env.NODE_ENV': JSON.stringify('production')};
 
 module.exports = {
   entry: ['./src/js/index.js', './src/assets/SCSS/App.scss'],
@@ -17,6 +15,7 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/'
   },
+  devtool: "source-map",
   devServer: {
     contentBase: './dist',
     port: 3001,
@@ -29,16 +28,11 @@ module.exports = {
         test: /\.js$/,
         exclude: /(node_modules)/,
         use: {
-          loader: 'babel-loader',
+          loader: ['babel-loader', 'eslint-loader'],
           options: {
             presets: ['@babel/preset-env']
           }
         }
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader"
       },
       {
         test: /\.scss$/,
@@ -81,8 +75,18 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin([
       {from:'src/assets/images',to:'./assets/images'} 
-  ]), 
-  new ExtractTextPlugin({filename: 'style.css'})
+    ]), 
+    new ExtractTextPlugin({filename: 'style.css'}),
+    new UglifyJsPlugin({
+      sourceMap: true,
+      output: {
+        comments: false
+      },
+      prod_ENV
+    }),
+    new CompressionPlugin({
+      prod_ENV
+    })
   ],
 };
 
