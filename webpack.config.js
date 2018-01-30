@@ -6,8 +6,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CompressionPlugin = require("compression-webpack-plugin");
 
-const prod_ENV = {'process.env.NODE_ENV': JSON.stringify('production')};
-
 module.exports = {
   entry: ['./src/js/index.js', './src/assets/SCSS/App.scss'],
   output: {
@@ -27,12 +25,12 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        use: {
-          loader: ['babel-loader', 'eslint-loader'],
+        use: [{
+          loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env']
           }
-        }
+        }]
       },
       {
         test: /\.scss$/,
@@ -78,15 +76,8 @@ module.exports = {
     ]), 
     new ExtractTextPlugin({filename: 'style.css'}),
     new UglifyJsPlugin({
-      sourceMap: true,
-      output: {
-        comments: false
-      },
-      prod_ENV
+      sourceMap: true
     }),
-    new CompressionPlugin({
-      prod_ENV
-    })
+    new CompressionPlugin()
   ],
 };
-
