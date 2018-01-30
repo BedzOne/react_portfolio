@@ -67,7 +67,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       hash: true,
-      title: "react app",
+      title: "Andrew Bedziak | Portfolio",
       template: "./src/index.html",
       filename: './index.html'
     }),
