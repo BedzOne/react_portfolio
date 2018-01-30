@@ -16,8 +16,6 @@ body {
 a {
   color: #aaa9a9;
   text-decoration: none; }
-  a:active {
-    color: yellow; }
 
 h1, h2, h3 {
   text-transform: uppercase; }
@@ -136,7 +134,7 @@ figure {
         height: 60%; } }
     @media screen and (min-width: 1000px) {
       .about__item figure {
-        width: 50%;
+        width: 60%;
         height: 90%; } }
   .about__item img {
     width: 100%;
@@ -180,12 +178,23 @@ figure {
       align-items: center; }
       @media screen and (min-width: 1000px) {
         .about__item .about__item-list div {
-          width: 50%; } }
+          width: 50%; }
+          .about__item .about__item-list div:nth-of-type(1) {
+            -webkit-align-items: flex-end;
+            -moz-align-items: flex-end;
+            -ms-align-items: flex-end;
+            align-items: flex-end;
+            padding-right: 5em; }
+          .about__item .about__item-list div:nth-of-type(2) {
+            -webkit-align-items: flex-start;
+            -moz-align-items: flex-start;
+            -ms-align-items: flex-start;
+            align-items: flex-start; } }
     @media screen and (min-width: 1000px) {
       .about__item .about__item-list ul {
         padding-left: 10em; } }
   .about__item p {
-    padding: 0 1em; }
+    padding: 0 2em; }
 
 .work {
   -webkit-flex-wrap: wrap;
@@ -633,5 +642,3 @@ h1, h2, h3, h4, h5 {
 
 button {
   font-family: 'Lato', sans-serif; }
-
-/*# sourceMappingURL=style.css.map*/

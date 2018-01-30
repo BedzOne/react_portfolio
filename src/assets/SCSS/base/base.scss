@@ -19,10 +19,6 @@ body {
 a {
     color: $lightGrey;
     text-decoration: none;
-
-    &:active {
-        color: yellow;
-    }
 }
 
 h1,h2,h3 {
