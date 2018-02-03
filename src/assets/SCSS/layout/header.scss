@@ -1,5 +1,11 @@
 .container {
     header {
+
+        // * {
+        //     border: 1px solid white;
+        // }
+
+        position: relative;
         @include flexbox;
         @include justify-content(center);
         @include align-items(center);
@@ -13,12 +19,16 @@
         }
 
         figure {
+            position: relative;
+            left: -40em;
             margin-bottom: 1em;
             width: 40%;
+            
 
             @media #{$desktop} {
-                margin: 0;
-                
+                position: absolute;
+                left: -40em; 
+                margin: 0;              
             }
         }
 
@@ -36,6 +46,8 @@
         .header__desc {
 
             @media #{$desktop} {
+                position: absolute;
+                left: 15em;
                 width: 65%;
             }
         }

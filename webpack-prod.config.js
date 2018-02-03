@@ -13,6 +13,7 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/'
   },
+  devtool: "source-map",
   devServer: {
     contentBase: './dist',
     port: 3001,
@@ -27,13 +28,16 @@ module.exports = {
         use: [{
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
+            presets: ['@babel/preset-env']
           }
         }]
       },
       {
         test: /\.scss$/,
-          use: ["style-loader", "css-loader", "sass-loader"]
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ["css-loader", "sass-loader"]
+        })
       },
       {
         test: /\.css$/,
@@ -51,7 +55,7 @@ module.exports = {
                 name: 'images/[hash]-[name].[ext]'
             } 
         }]
-    }
+      }
     ]
   },
   plugins: [
@@ -61,9 +65,15 @@ module.exports = {
       template: "./src/index.html",
       filename: './index.html'
     }),
+    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin([
       {from:'src/assets/images',to:'./assets/images'} 
     ]), 
+    new ExtractTextPlugin({filename: 'style.css'}),
+    new UglifyJsPlugin({
+      sourceMap: true
+    }),
+    new CompressionPlugin()
   ],
 };

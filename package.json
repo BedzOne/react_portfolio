@@ -7,8 +7,10 @@
     "history": "^4.7.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
+    "react-anime": "^2.1.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
+    "react-transition-group": "^2.2.1",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.1"
   },
@@ -38,7 +40,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack -p --config ./webpack-prod.config.js"
   },
   "author": "Andrew Bedziak",
   "license": "ISC"

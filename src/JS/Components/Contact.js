@@ -38,6 +38,7 @@ class Contact extends Component {
   render() {
     return(
       <section className="contact">
+      <div className='overlay'></div>
         <div className='contact__container'>
         <h1>Contact Me</h1>
         <form onSubmit={this.handleSubmit} action="https://formspree.io/abedziak@hotmail.com"
@@ -48,13 +49,13 @@ class Contact extends Component {
             <input onChange={this.handleOnChange} type="email" id="email" name="_replyto" required />
             <label>MESSAGE</label>
             <textarea onChange={this.handleOnChange} id="textarea" name='message' rows="10" maxLength="2000" required></textarea>
-            <button disabled={this.disableButton} type='submit' id="form-btn">Send</button>
+            <button disabled= {this.disableButton} type='submit' id="form-btn">Send</button>
         </form>
       </div>
       <a href='https://github.com/BedzOne' target='blank' rel='noopener' className='link1'><i className='icon1 fa fa-github-alt'></i></a>
       <a href='https://linkedin.com/in/andrew-bedziak-47a805b8' target='blank' rel='noopener' className='link2'><i className='icon2 fa fa-linkedin-square'></i></a>  
       <nav>
-        <Link to="/" >Home</Link>
+        <Link to="/">Home</Link>
         <Link to="/about" >About</Link>
         <Link to="/work" >Work</Link>
       </nav>

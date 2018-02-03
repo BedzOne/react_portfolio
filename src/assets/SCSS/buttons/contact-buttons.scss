@@ -6,6 +6,9 @@
     height: 7em;
     color: #575555;
     margin-left: 0;
+    opacity: 0;
+    animation: fadeIn 2s 1s linear forwards;
+    z-index: 2000;
 
     i {
         position: absolute;
@@ -21,11 +24,21 @@
 .link1 {
     left: 0;
     transform: rotate(-45deg) translateY(-90px) translateX(-17px);
+
+    &:hover {
+        color: white;
+        transition: 0.5s;
+    }
 }
 
 .link2 {
     right: 0;
     transform: rotate(45deg) translateY(-90px) translateX(17px);
+
+    &:hover {
+        color: $linkedInBlue;
+        transition: 0.5s;
+    }
 }
 
 .icon1 {
@@ -34,4 +47,14 @@
 
 .icon2 {
     left: 40%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1
+    }
 }

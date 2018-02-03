@@ -17,6 +17,12 @@
     }
 }
 
+.about__item-list {
+    a {
+        margin-left: 0;
+    }
+}
+
 .contact {
     button {
         width: 5em;
@@ -27,6 +33,7 @@
         border-radius: 2px;
         border: 0.1em solid transparent;
         background: white;
+        color: $lightGrey;
         transition: all 0.5s ease-in-out;
         cursor: pointer;
 
