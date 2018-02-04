@@ -23,6 +23,7 @@ figure {
     background-size: 100% 100%;
     @include flex-direction(column);
     padding: 1em 0;
+    opacity: 0;
 
     @media #{$desktop} {
         height: 100vh;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Anime from 'react-anime';
 
 class Contact extends Component {
   constructor(props) {
@@ -37,6 +38,13 @@ class Contact extends Component {
 
   render() {
     return(
+      <Anime 
+        easing='linear'
+        direction='normal'
+        duration={500}
+        loop={false}
+        opacity={1}
+      >
       <section className="contact">
       <div className='overlay'></div>
         <div className='contact__container'>
@@ -60,6 +68,7 @@ class Contact extends Component {
         <Link to="/work" >Work</Link>
       </nav>
     </section>
+    </Anime>
     )
   }
 }

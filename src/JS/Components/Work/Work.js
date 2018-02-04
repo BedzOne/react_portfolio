@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Anime from 'react-anime';
 
 import Project from './Project';
 
@@ -42,6 +43,13 @@ class Work extends Component {
 
   render() {
     return(
+      <Anime 
+      easing='linear'
+      direction='normal'
+      duration={2000}
+      loop={false}
+      opacity={1}
+      >
       <section className='work'>
         <Project title='News App' 
           displayImage={this.state.displayImage} 
@@ -81,6 +89,7 @@ class Work extends Component {
           <Link to="/contact">Contact</Link>
         </nav>
       </section>
+      </Anime>
     )
   }
 }

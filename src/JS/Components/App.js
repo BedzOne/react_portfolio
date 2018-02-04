@@ -21,7 +21,7 @@ class App extends Component {
       <div>
         <Router history={history}>
           <Switch>   
-            <Route exact path='/' render={()=><Home/>} />
+            <Route exact path='/' render={() => <Home/>} />
             <Route exact path='/about' component={About}/>
             <Route exact path='/work' component={Work}/>
             <Route exact path='/contact' component={Contact}/>

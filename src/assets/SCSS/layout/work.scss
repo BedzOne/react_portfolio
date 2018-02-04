@@ -5,6 +5,7 @@
     position: relative;
     width: 100%;
     padding-bottom: 1em;
+    opacity: 0;
 
     @media #{$desktop} {
         @include align-items(normal);
