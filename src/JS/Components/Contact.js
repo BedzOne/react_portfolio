@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Anime from 'react-anime';
+import PropTypes from 'prop-types';
 
 class Contact extends Component {
   constructor(props) {
@@ -71,6 +72,12 @@ class Contact extends Component {
     </Anime>
     )
   }
+}
+
+Contact.PropTypes = {
+  name: PropTypes.string,
+  _replyTo: PropTypes.string,
+  message: PropTypes.string
 }
 
 export default Contact;

@@ -5,7 +5,6 @@ import Anime from 'react-anime';
 
 import img from '../../assets/images/about.jpeg';
 
-
 class About extends Component {
   
   render() {
